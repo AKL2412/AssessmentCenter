@@ -1,0 +1,1260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ACModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ACModelStoreContainer">
+    <EntitySet Name="EntiteSet" EntityType="ACModel.Store.EntiteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TypeEntiteSet" EntityType="ACModel.Store.TypeEntiteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FonctionSet" EntityType="ACModel.Store.FonctionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PosteSet" EntityType="ACModel.Store.PosteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeSet" EntityType="ACModel.Store.EmployeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FormationSet" EntityType="ACModel.Store.FormationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeFormationSet" EntityType="ACModel.Store.EmployeFormationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SupportSet" EntityType="ACModel.Store.SupportSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContenuSet" EntityType="ACModel.Store.ContenuSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="QuizSet" EntityType="ACModel.Store.QuizSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeQuizSet" EntityType="ACModel.Store.EmployeQuizSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="QuestionSet" EntityType="ACModel.Store.QuestionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TypeQuestionSet" EntityType="ACModel.Store.TypeQuestionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OptionSet" EntityType="ACModel.Store.OptionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReponseSet" EntityType="ACModel.Store.ReponseSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompositionSet" EntityType="ACModel.Store.CompositionSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="EntiteEntite" Association="ACModel.Store.EntiteEntite">
+      <End Role="Entite" EntitySet="EntiteSet" />
+      <End Role="Entite1" EntitySet="EntiteSet" />
+    </AssociationSet>
+    <AssociationSet Name="TypeEntiteEntite" Association="ACModel.Store.TypeEntiteEntite">
+      <End Role="TypeEntite" EntitySet="TypeEntiteSet" />
+      <End Role="Entite" EntitySet="EntiteSet" />
+    </AssociationSet>
+    <AssociationSet Name="TypeEntiteFonction" Association="ACModel.Store.TypeEntiteFonction">
+      <End Role="TypeEntite" EntitySet="TypeEntiteSet" />
+      <End Role="Fonction" EntitySet="FonctionSet" />
+    </AssociationSet>
+    <AssociationSet Name="EntitePoste" Association="ACModel.Store.EntitePoste">
+      <End Role="Entite" EntitySet="EntiteSet" />
+      <End Role="Poste" EntitySet="PosteSet" />
+    </AssociationSet>
+    <AssociationSet Name="FonctionPoste" Association="ACModel.Store.FonctionPoste">
+      <End Role="Fonction" EntitySet="FonctionSet" />
+      <End Role="Poste" EntitySet="PosteSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmployePoste" Association="ACModel.Store.EmployePoste">
+      <End Role="Employe" EntitySet="EmployeSet" />
+      <End Role="Poste" EntitySet="PosteSet" />
+    </AssociationSet>
+    <AssociationSet Name="PosteEmployeFormation" Association="ACModel.Store.PosteEmployeFormation">
+      <End Role="Poste" EntitySet="PosteSet" />
+      <End Role="EmployeFormation" EntitySet="EmployeFormationSet" />
+    </AssociationSet>
+    <AssociationSet Name="FormationEmployeFormation" Association="ACModel.Store.FormationEmployeFormation">
+      <End Role="Formation" EntitySet="FormationSet" />
+      <End Role="EmployeFormation" EntitySet="EmployeFormationSet" />
+    </AssociationSet>
+    <AssociationSet Name="SupportContenu" Association="ACModel.Store.SupportContenu">
+      <End Role="Support" EntitySet="SupportSet" />
+      <End Role="Contenu" EntitySet="ContenuSet" />
+    </AssociationSet>
+    <AssociationSet Name="FormationSupport" Association="ACModel.Store.FormationSupport">
+      <End Role="Formation" EntitySet="FormationSet" />
+      <End Role="Support" EntitySet="SupportSet" />
+    </AssociationSet>
+    <AssociationSet Name="FormationQuiz" Association="ACModel.Store.FormationQuiz">
+      <End Role="Formation" EntitySet="FormationSet" />
+      <End Role="Quiz" EntitySet="QuizSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeFormationEmployeQuiz" Association="ACModel.Store.EmployeFormationEmployeQuiz">
+      <End Role="EmployeFormation" EntitySet="EmployeFormationSet" />
+      <End Role="EmployeQuiz" EntitySet="EmployeQuizSet" />
+    </AssociationSet>
+    <AssociationSet Name="QuizEmployeQuiz" Association="ACModel.Store.QuizEmployeQuiz">
+      <End Role="Quiz" EntitySet="QuizSet" />
+      <End Role="EmployeQuiz" EntitySet="EmployeQuizSet" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionTypeQuestion" Association="ACModel.Store.QuestionTypeQuestion">
+      <End Role="Question" EntitySet="QuestionSet" />
+      <End Role="TypeQuestion" EntitySet="TypeQuestionSet" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionOption" Association="ACModel.Store.QuestionOption">
+      <End Role="Question" EntitySet="QuestionSet" />
+      <End Role="Option" EntitySet="OptionSet" />
+    </AssociationSet>
+    <AssociationSet Name="QuizQuestion" Association="ACModel.Store.QuizQuestion">
+      <End Role="Quiz" EntitySet="QuizSet" />
+      <End Role="Question" EntitySet="QuestionSet" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionReponse" Association="ACModel.Store.QuestionReponse">
+      <End Role="Question" EntitySet="QuestionSet" />
+      <End Role="Reponse" EntitySet="ReponseSet" />
+    </AssociationSet>
+    <AssociationSet Name="OptionReponse" Association="ACModel.Store.OptionReponse">
+      <End Role="Option" EntitySet="OptionSet" />
+      <End Role="Reponse" EntitySet="ReponseSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeQuizComposition" Association="ACModel.Store.EmployeQuizComposition">
+      <End Role="EmployeQuiz" EntitySet="EmployeQuizSet" />
+      <End Role="Composition" EntitySet="CompositionSet" />
+    </AssociationSet>
+    <AssociationSet Name="CompositionReponse" Association="ACModel.Store.CompositionReponse">
+      <End Role="Composition" EntitySet="CompositionSet" />
+      <End Role="Reponse" EntitySet="ReponseSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EntiteSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Nom" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Parent_Id" Type="int" Nullable="false" />
+    <Property Name="TypeEntite_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeEntiteSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="FonctionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Nom" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="EstTransversale" Type="bit" Nullable="false" />
+    <Property Name="EstTop" Type="bit" Nullable="false" />
+    <Property Name="TypeEntite_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PosteSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Entite_Id" Type="int" Nullable="false" />
+    <Property Name="Fonction_Id" Type="int" Nullable="false" />
+    <Property Name="Employe_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Matricule" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Nom" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Prenom" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FormationSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Titre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Ouverte" Type="bit" Nullable="false" />
+    <Property Name="DateLimite" Type="datetime" Nullable="true" />
+    <Property Name="Desccription" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeFormationSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="datetime" Nullable="false" />
+    <Property Name="DateFin" Type="datetime" Nullable="true" />
+    <Property Name="Poste_Id" Type="int" Nullable="false" />
+    <Property Name="Formation_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SupportSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Titre" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Formation_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContenuSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Texte" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Support_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuizSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="Titre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Examen" Type="bit" Nullable="false" />
+    <Property Name="Valide" Type="bit" Nullable="false" />
+    <Property Name="Duree" Type="smallint" Nullable="false" />
+    <Property Name="DateDebut" Type="datetime" Nullable="false" />
+    <Property Name="DateFin" Type="datetime" Nullable="false" />
+    <Property Name="Formation_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeQuizSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="DateFin" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="EmployeFormation_Id" Type="int" Nullable="false" />
+    <Property Name="Quiz_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuestionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Contenu" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="TypeQuestion_Id" Type="int" Nullable="false" />
+    <Property Name="Quiz_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeQuestionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Nom" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OptionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reponse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Question_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReponseSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Proposition" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Question_Id" Type="int" Nullable="false" />
+    <Property Name="Option_Id" Type="int" Nullable="false" />
+    <Property Name="Composition_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompositionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="At" Type="datetime" Nullable="false" />
+    <Property Name="EmployeQuiz_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="EntiteEntite">
+    <End Role="Entite" Type="ACModel.Store.EntiteSet" Multiplicity="1" />
+    <End Role="Entite1" Type="ACModel.Store.EntiteSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entite">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Entite1">
+        <PropertyRef Name="Parent_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TypeEntiteEntite">
+    <End Role="TypeEntite" Type="ACModel.Store.TypeEntiteSet" Multiplicity="1" />
+    <End Role="Entite" Type="ACModel.Store.EntiteSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEntite">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Entite">
+        <PropertyRef Name="TypeEntite_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TypeEntiteFonction">
+    <End Role="TypeEntite" Type="ACModel.Store.TypeEntiteSet" Multiplicity="1" />
+    <End Role="Fonction" Type="ACModel.Store.FonctionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEntite">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Fonction">
+        <PropertyRef Name="TypeEntite_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EntitePoste">
+    <End Role="Entite" Type="ACModel.Store.EntiteSet" Multiplicity="1" />
+    <End Role="Poste" Type="ACModel.Store.PosteSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entite">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Poste">
+        <PropertyRef Name="Entite_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FonctionPoste">
+    <End Role="Fonction" Type="ACModel.Store.FonctionSet" Multiplicity="1" />
+    <End Role="Poste" Type="ACModel.Store.PosteSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fonction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Poste">
+        <PropertyRef Name="Fonction_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployePoste">
+    <End Role="Employe" Type="ACModel.Store.EmployeSet" Multiplicity="1" />
+    <End Role="Poste" Type="ACModel.Store.PosteSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Poste">
+        <PropertyRef Name="Employe_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PosteEmployeFormation">
+    <End Role="Poste" Type="ACModel.Store.PosteSet" Multiplicity="1" />
+    <End Role="EmployeFormation" Type="ACModel.Store.EmployeFormationSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Poste">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeFormation">
+        <PropertyRef Name="Poste_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FormationEmployeFormation">
+    <End Role="Formation" Type="ACModel.Store.FormationSet" Multiplicity="1" />
+    <End Role="EmployeFormation" Type="ACModel.Store.EmployeFormationSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Formation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeFormation">
+        <PropertyRef Name="Formation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SupportContenu">
+    <End Role="Support" Type="ACModel.Store.SupportSet" Multiplicity="1" />
+    <End Role="Contenu" Type="ACModel.Store.ContenuSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Support">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contenu">
+        <PropertyRef Name="Support_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FormationSupport">
+    <End Role="Formation" Type="ACModel.Store.FormationSet" Multiplicity="1" />
+    <End Role="Support" Type="ACModel.Store.SupportSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Formation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Support">
+        <PropertyRef Name="Formation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FormationQuiz">
+    <End Role="Formation" Type="ACModel.Store.FormationSet" Multiplicity="1" />
+    <End Role="Quiz" Type="ACModel.Store.QuizSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Formation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quiz">
+        <PropertyRef Name="Formation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeFormationEmployeQuiz">
+    <End Role="EmployeFormation" Type="ACModel.Store.EmployeFormationSet" Multiplicity="1" />
+    <End Role="EmployeQuiz" Type="ACModel.Store.EmployeQuizSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeFormation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeQuiz">
+        <PropertyRef Name="EmployeFormation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuizEmployeQuiz">
+    <End Role="Quiz" Type="ACModel.Store.QuizSet" Multiplicity="1" />
+    <End Role="EmployeQuiz" Type="ACModel.Store.EmployeQuizSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quiz">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeQuiz">
+        <PropertyRef Name="Quiz_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionTypeQuestion">
+    <End Role="Question" Type="ACModel.Store.QuestionSet" Multiplicity="*" />
+    <End Role="TypeQuestion" Type="ACModel.Store.TypeQuestionSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TypeQuestion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="TypeQuestion_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionOption">
+    <End Role="Question" Type="ACModel.Store.QuestionSet" Multiplicity="1" />
+    <End Role="Option" Type="ACModel.Store.OptionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Option">
+        <PropertyRef Name="Question_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuizQuestion">
+    <End Role="Quiz" Type="ACModel.Store.QuizSet" Multiplicity="1" />
+    <End Role="Question" Type="ACModel.Store.QuestionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quiz">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="Quiz_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionReponse">
+    <End Role="Question" Type="ACModel.Store.QuestionSet" Multiplicity="1" />
+    <End Role="Reponse" Type="ACModel.Store.ReponseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reponse">
+        <PropertyRef Name="Question_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OptionReponse">
+    <End Role="Option" Type="ACModel.Store.OptionSet" Multiplicity="1" />
+    <End Role="Reponse" Type="ACModel.Store.ReponseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Option">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reponse">
+        <PropertyRef Name="Option_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeQuizComposition">
+    <End Role="EmployeQuiz" Type="ACModel.Store.EmployeQuizSet" Multiplicity="1" />
+    <End Role="Composition" Type="ACModel.Store.CompositionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeQuiz">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Composition">
+        <PropertyRef Name="EmployeQuiz_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CompositionReponse">
+    <End Role="Composition" Type="ACModel.Store.CompositionSet" Multiplicity="1" />
+    <End Role="Reponse" Type="ACModel.Store.ReponseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Composition">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reponse">
+        <PropertyRef Name="Composition_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ACModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ACModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EntiteSet" EntityType="ACModel.Entite" />
+          <AssociationSet Name="EntiteEntite" Association="ACModel.EntiteEntite">
+            <End Role="Entite" EntitySet="EntiteSet" />
+            <End Role="Entite1" EntitySet="EntiteSet" />
+          </AssociationSet>
+          <EntitySet Name="TypeEntiteSet" EntityType="ACModel.TypeEntite" />
+          <AssociationSet Name="TypeEntiteEntite" Association="ACModel.TypeEntiteEntite">
+            <End Role="TypeEntite" EntitySet="TypeEntiteSet" />
+            <End Role="Entite" EntitySet="EntiteSet" />
+          </AssociationSet>
+          <EntitySet Name="FonctionSet" EntityType="ACModel.Fonction" />
+          <AssociationSet Name="TypeEntiteFonction" Association="ACModel.TypeEntiteFonction">
+            <End Role="TypeEntite" EntitySet="TypeEntiteSet" />
+            <End Role="Fonction" EntitySet="FonctionSet" />
+          </AssociationSet>
+          <EntitySet Name="PosteSet" EntityType="ACModel.Poste" />
+          <AssociationSet Name="EntitePoste" Association="ACModel.EntitePoste">
+            <End EntitySet="EntiteSet" Role="Entite" />
+            <End EntitySet="PosteSet" Role="Poste" />
+          </AssociationSet>
+          <AssociationSet Name="FonctionPoste" Association="ACModel.FonctionPoste">
+            <End Role="Fonction" EntitySet="FonctionSet" />
+            <End Role="Poste" EntitySet="PosteSet" />
+          </AssociationSet>
+          <EntitySet Name="EmployeSet" EntityType="ACModel.Employe" />
+          <AssociationSet Name="EmployePoste" Association="ACModel.EmployePoste">
+            <End Role="Employe" EntitySet="EmployeSet" />
+            <End Role="Poste" EntitySet="PosteSet" />
+          </AssociationSet>
+          <EntitySet Name="FormationSet" EntityType="ACModel.Formation" />
+          <EntitySet Name="EmployeFormationSet" EntityType="ACModel.EmployeFormation" />
+          <AssociationSet Name="PosteEmployeFormation" Association="ACModel.PosteEmployeFormation">
+            <End Role="Poste" EntitySet="PosteSet" />
+            <End Role="EmployeFormation" EntitySet="EmployeFormationSet" />
+          </AssociationSet>
+          <AssociationSet Name="FormationEmployeFormation" Association="ACModel.FormationEmployeFormation">
+            <End Role="Formation" EntitySet="FormationSet" />
+            <End Role="EmployeFormation" EntitySet="EmployeFormationSet" />
+          </AssociationSet>
+          <EntitySet Name="SupportSet" EntityType="ACModel.Support" />
+          <EntitySet Name="ContenuSet" EntityType="ACModel.Contenu" />
+          <AssociationSet Name="SupportContenu" Association="ACModel.SupportContenu">
+            <End Role="Support" EntitySet="SupportSet" />
+            <End Role="Contenu" EntitySet="ContenuSet" />
+          </AssociationSet>
+          <AssociationSet Name="FormationSupport" Association="ACModel.FormationSupport">
+            <End Role="Formation" EntitySet="FormationSet" />
+            <End Role="Support" EntitySet="SupportSet" />
+          </AssociationSet>
+          <EntitySet Name="QuizSet" EntityType="ACModel.Quiz" />
+          <AssociationSet Name="FormationQuiz" Association="ACModel.FormationQuiz">
+            <End Role="Formation" EntitySet="FormationSet" />
+            <End Role="Quiz" EntitySet="QuizSet" />
+          </AssociationSet>
+          <EntitySet Name="EmployeQuizSet" EntityType="ACModel.EmployeQuiz" />
+          <AssociationSet Name="EmployeFormationEmployeQuiz" Association="ACModel.EmployeFormationEmployeQuiz">
+            <End Role="EmployeFormation" EntitySet="EmployeFormationSet" />
+            <End Role="EmployeQuiz" EntitySet="EmployeQuizSet" />
+          </AssociationSet>
+          <AssociationSet Name="QuizEmployeQuiz" Association="ACModel.QuizEmployeQuiz">
+            <End Role="Quiz" EntitySet="QuizSet" />
+            <End Role="EmployeQuiz" EntitySet="EmployeQuizSet" />
+          </AssociationSet>
+          <EntitySet Name="QuestionSet" EntityType="ACModel.Question" />
+          <EntitySet Name="TypeQuestionSet" EntityType="ACModel.TypeQuestion" />
+          <AssociationSet Name="QuestionTypeQuestion" Association="ACModel.QuestionTypeQuestion">
+            <End Role="Question" EntitySet="QuestionSet" />
+            <End Role="TypeQuestion" EntitySet="TypeQuestionSet" />
+          </AssociationSet>
+          <EntitySet Name="OptionSet" EntityType="ACModel.Option" />
+          <AssociationSet Name="QuestionOption" Association="ACModel.QuestionOption">
+            <End Role="Question" EntitySet="QuestionSet" />
+            <End Role="Option" EntitySet="OptionSet" />
+          </AssociationSet>
+          <EntitySet Name="ReponseSet" EntityType="ACModel.Reponse" />
+          <AssociationSet Name="QuizQuestion" Association="ACModel.QuizQuestion">
+            <End Role="Quiz" EntitySet="QuizSet" />
+            <End Role="Question" EntitySet="QuestionSet" />
+          </AssociationSet>
+          <AssociationSet Name="QuestionReponse" Association="ACModel.QuestionReponse">
+            <End Role="Question" EntitySet="QuestionSet" />
+            <End Role="Reponse" EntitySet="ReponseSet" />
+          </AssociationSet>
+          <AssociationSet Name="OptionReponse" Association="ACModel.OptionReponse">
+            <End Role="Option" EntitySet="OptionSet" />
+            <End Role="Reponse" EntitySet="ReponseSet" />
+          </AssociationSet>
+          <EntitySet Name="CompositionSet" EntityType="ACModel.Composition" />
+          <AssociationSet Name="EmployeQuizComposition" Association="ACModel.EmployeQuizComposition">
+            <End Role="EmployeQuiz" EntitySet="EmployeQuizSet" />
+            <End Role="Composition" EntitySet="CompositionSet" />
+          </AssociationSet>
+          <AssociationSet Name="CompositionReponse" Association="ACModel.CompositionReponse">
+            <End Role="Composition" EntitySet="CompositionSet" />
+            <End Role="Reponse" EntitySet="ReponseSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Entite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="200" />
+          <NavigationProperty Name="SousEntites" Relationship="ACModel.EntiteEntite" FromRole="Entite" ToRole="Entite1" />
+          <NavigationProperty Name="Parent" Relationship="ACModel.EntiteEntite" FromRole="Entite1" ToRole="Entite" />
+          <NavigationProperty Name="TypeEntite" Relationship="ACModel.TypeEntiteEntite" FromRole="Entite" ToRole="TypeEntite" />
+          <NavigationProperty Name="Postes" Relationship="ACModel.EntitePoste" FromRole="Entite" ToRole="Poste" />
+        </EntityType>
+        <Association Name="EntiteEntite">
+          <End Type="ACModel.Entite" Role="Entite" Multiplicity="1" />
+          <End Type="ACModel.Entite" Role="Entite1" Multiplicity="*" />
+        </Association>
+        <EntityType Name="TypeEntite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="true" Unicode="true" MaxLength="20" />
+          <NavigationProperty Name="Entite" Relationship="ACModel.TypeEntiteEntite" FromRole="TypeEntite" ToRole="Entite" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="200" />
+          <NavigationProperty Name="Fonction" Relationship="ACModel.TypeEntiteFonction" FromRole="TypeEntite" ToRole="Fonction" />
+        </EntityType>
+        <Association Name="TypeEntiteEntite">
+          <End Type="ACModel.TypeEntite" Role="TypeEntite" Multiplicity="1" />
+          <End Type="ACModel.Entite" Role="Entite" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Fonction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="20" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <Property Name="EstTransversale" Type="Boolean" Nullable="false" />
+          <Property Name="EstTop" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TypeEntite" Relationship="ACModel.TypeEntiteFonction" FromRole="Fonction" ToRole="TypeEntite" />
+          <NavigationProperty Name="Postes" Relationship="ACModel.FonctionPoste" FromRole="Fonction" ToRole="Poste" />
+        </EntityType>
+        <Association Name="TypeEntiteFonction">
+          <End Type="ACModel.TypeEntite" Role="TypeEntite" Multiplicity="1" />
+          <End Type="ACModel.Fonction" Role="Fonction" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Poste">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Entite" Relationship="ACModel.EntitePoste" FromRole="Poste" ToRole="Entite" />
+          <NavigationProperty Name="Fonction" Relationship="ACModel.FonctionPoste" FromRole="Poste" ToRole="Fonction" />
+          <NavigationProperty Name="Employe" Relationship="ACModel.EmployePoste" FromRole="Poste" ToRole="Employe" />
+          <NavigationProperty Name="EmployeFormation" Relationship="ACModel.PosteEmployeFormation" FromRole="Poste" ToRole="EmployeFormation" />
+        </EntityType>
+        <Association Name="EntitePoste">
+          <End Type="ACModel.Entite" Multiplicity="1" Role="Entite" />
+          <End Type="ACModel.Poste" Multiplicity="*" Role="Poste" />
+        </Association>
+        <Association Name="FonctionPoste">
+          <End Type="ACModel.Fonction" Role="Fonction" Multiplicity="1" />
+          <End Type="ACModel.Poste" Role="Poste" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Employe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Matricule" Type="String" Nullable="false" MaxLength="20" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="100" />
+          <Property Name="Prenom" Type="String" Nullable="false" MaxLength="255" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" />
+          <Property Name="Image" Type="String" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Poste" Relationship="ACModel.EmployePoste" FromRole="Employe" ToRole="Poste" />
+        </EntityType>
+        <Association Name="EmployePoste">
+          <End Type="ACModel.Employe" Role="Employe" Multiplicity="1" />
+          <End Type="ACModel.Poste" Role="Poste" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Formation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="20" />
+          <Property Name="Titre" Type="String" Nullable="false" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Ouverte" Type="Boolean" Nullable="false" />
+          <Property Name="DateLimite" Type="DateTime" Nullable="true" />
+          <Property Name="Desccription" Type="String" Nullable="false" />
+          <NavigationProperty Name="EmployeFormation" Relationship="ACModel.FormationEmployeFormation" FromRole="Formation" ToRole="EmployeFormation" />
+          <NavigationProperty Name="Support" Relationship="ACModel.FormationSupport" FromRole="Formation" ToRole="Support" />
+          <NavigationProperty Name="Quiz" Relationship="ACModel.FormationQuiz" FromRole="Formation" ToRole="Quiz" />
+        </EntityType>
+        <EntityType Name="EmployeFormation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <Property Name="Active" Type="DateTime" Nullable="false" />
+          <Property Name="DateFin" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Poste" Relationship="ACModel.PosteEmployeFormation" FromRole="EmployeFormation" ToRole="Poste" />
+          <NavigationProperty Name="Formation" Relationship="ACModel.FormationEmployeFormation" FromRole="EmployeFormation" ToRole="Formation" />
+          <NavigationProperty Name="EmployeQuiz" Relationship="ACModel.EmployeFormationEmployeQuiz" FromRole="EmployeFormation" ToRole="EmployeQuiz" />
+        </EntityType>
+        <Association Name="PosteEmployeFormation">
+          <End Type="ACModel.Poste" Role="Poste" Multiplicity="1" />
+          <End Type="ACModel.EmployeFormation" Role="EmployeFormation" Multiplicity="*" />
+        </Association>
+        <Association Name="FormationEmployeFormation">
+          <End Type="ACModel.Formation" Role="Formation" Multiplicity="1" />
+          <End Type="ACModel.EmployeFormation" Role="EmployeFormation" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="20" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Titre" Type="String" Nullable="false" MaxLength="255" />
+          <NavigationProperty Name="Contenu" Relationship="ACModel.SupportContenu" FromRole="Support" ToRole="Contenu" />
+          <NavigationProperty Name="Formation" Relationship="ACModel.FormationSupport" FromRole="Support" ToRole="Formation" />
+        </EntityType>
+        <EntityType Name="Contenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Texte" Type="String" Nullable="true" />
+          <NavigationProperty Name="Support" Relationship="ACModel.SupportContenu" FromRole="Contenu" ToRole="Support" />
+        </EntityType>
+        <Association Name="SupportContenu">
+          <End Type="ACModel.Support" Role="Support" Multiplicity="1" />
+          <End Type="ACModel.Contenu" Role="Contenu" Multiplicity="*" />
+        </Association>
+        <Association Name="FormationSupport">
+          <End Type="ACModel.Formation" Role="Formation" Multiplicity="1" />
+          <End Type="ACModel.Support" Role="Support" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Quiz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="true" MaxLength="200" />
+          <Property Name="Titre" Type="String" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Examen" Type="Boolean" Nullable="false" />
+          <Property Name="Valide" Type="Boolean" Nullable="false" />
+          <Property Name="Duree" Type="Int16" Nullable="false" />
+          <Property Name="DateDebut" Type="DateTime" Nullable="false" />
+          <Property Name="DateFin" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Formation" Relationship="ACModel.FormationQuiz" FromRole="Quiz" ToRole="Formation" />
+          <NavigationProperty Name="EmployeQuiz" Relationship="ACModel.QuizEmployeQuiz" FromRole="Quiz" ToRole="EmployeQuiz" />
+          <NavigationProperty Name="Question" Relationship="ACModel.QuizQuestion" FromRole="Quiz" ToRole="Question" />
+        </EntityType>
+        <Association Name="FormationQuiz">
+          <End Type="ACModel.Formation" Role="Formation" Multiplicity="1" />
+          <End Type="ACModel.Quiz" Role="Quiz" Multiplicity="*" />
+        </Association>
+        <EntityType Name="EmployeQuiz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <Property Name="DateFin" Type="DateTime" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EmployeFormation" Relationship="ACModel.EmployeFormationEmployeQuiz" FromRole="EmployeQuiz" ToRole="EmployeFormation" />
+          <NavigationProperty Name="Quiz" Relationship="ACModel.QuizEmployeQuiz" FromRole="EmployeQuiz" ToRole="Quiz" />
+          <NavigationProperty Name="Composition" Relationship="ACModel.EmployeQuizComposition" FromRole="EmployeQuiz" ToRole="Composition" />
+        </EntityType>
+        <Association Name="EmployeFormationEmployeQuiz">
+          <End Type="ACModel.EmployeFormation" Role="EmployeFormation" Multiplicity="1" />
+          <End Type="ACModel.EmployeQuiz" Role="EmployeQuiz" Multiplicity="*" />
+        </Association>
+        <Association Name="QuizEmployeQuiz">
+          <End Type="ACModel.Quiz" Role="Quiz" Multiplicity="1" />
+          <End Type="ACModel.EmployeQuiz" Role="EmployeQuiz" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" />
+          <Property Name="Contenu" Type="String" Nullable="false" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="TypeQuestion" Relationship="ACModel.QuestionTypeQuestion" FromRole="Question" ToRole="TypeQuestion" />
+          <NavigationProperty Name="Option" Relationship="ACModel.QuestionOption" FromRole="Question" ToRole="Option" />
+          <NavigationProperty Name="Quiz" Relationship="ACModel.QuizQuestion" FromRole="Question" ToRole="Quiz" />
+          <NavigationProperty Name="Reponse" Relationship="ACModel.QuestionReponse" FromRole="Question" ToRole="Reponse" />
+        </EntityType>
+        <EntityType Name="TypeQuestion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Question" Relationship="ACModel.QuestionTypeQuestion" FromRole="TypeQuestion" ToRole="Question" />
+        </EntityType>
+        <Association Name="QuestionTypeQuestion">
+          <End Type="ACModel.Question" Role="Question" Multiplicity="*" />
+          <End Type="ACModel.TypeQuestion" Role="TypeQuestion" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Option">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Reponse" Type="String" Nullable="false" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Question" Relationship="ACModel.QuestionOption" FromRole="Option" ToRole="Question" />
+          <NavigationProperty Name="Reponse1" Relationship="ACModel.OptionReponse" FromRole="Option" ToRole="Reponse" />
+        </EntityType>
+        <Association Name="QuestionOption">
+          <End Type="ACModel.Question" Role="Question" Multiplicity="1" />
+          <End Type="ACModel.Option" Role="Option" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Reponse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Proposition" Type="String" Nullable="true" />
+          <NavigationProperty Name="Question" Relationship="ACModel.QuestionReponse" FromRole="Reponse" ToRole="Question" />
+          <NavigationProperty Name="Option" Relationship="ACModel.OptionReponse" FromRole="Reponse" ToRole="Option" />
+          <NavigationProperty Name="Composition" Relationship="ACModel.CompositionReponse" FromRole="Reponse" ToRole="Composition" />
+        </EntityType>
+        <Association Name="QuizQuestion">
+          <End Type="ACModel.Quiz" Role="Quiz" Multiplicity="1" />
+          <End Type="ACModel.Question" Role="Question" Multiplicity="*" />
+        </Association>
+        <Association Name="QuestionReponse">
+          <End Type="ACModel.Question" Role="Question" Multiplicity="1" />
+          <End Type="ACModel.Reponse" Role="Reponse" Multiplicity="*" />
+        </Association>
+        <Association Name="OptionReponse">
+          <End Type="ACModel.Option" Role="Option" Multiplicity="1" />
+          <End Type="ACModel.Reponse" Role="Reponse" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Composition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="At" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="EmployeQuiz" Relationship="ACModel.EmployeQuizComposition" FromRole="Composition" ToRole="EmployeQuiz" />
+          <NavigationProperty Name="Reponse" Relationship="ACModel.CompositionReponse" FromRole="Composition" ToRole="Reponse" />
+        </EntityType>
+        <Association Name="EmployeQuizComposition">
+          <End Type="ACModel.EmployeQuiz" Role="EmployeQuiz" Multiplicity="1" />
+          <End Type="ACModel.Composition" Role="Composition" Multiplicity="0..1" />
+        </Association>
+        <Association Name="CompositionReponse">
+          <End Type="ACModel.Composition" Role="Composition" Multiplicity="1" />
+          <End Type="ACModel.Reponse" Role="Reponse" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ACModelStoreContainer" CdmEntityContainer="ACModelContainer">
+    <EntitySetMapping Name="EntiteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Entite)">
+        <MappingFragment StoreEntitySet="EntiteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="At" ColumnName="At" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeEntiteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.TypeEntite)">
+        <MappingFragment StoreEntitySet="TypeEntiteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="At" ColumnName="At" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FonctionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Fonction)">
+        <MappingFragment StoreEntitySet="FonctionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="At" ColumnName="At" />
+          <ScalarProperty Name="EstTransversale" ColumnName="EstTransversale" />
+          <ScalarProperty Name="EstTop" ColumnName="EstTop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Poste)">
+        <MappingFragment StoreEntitySet="PosteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="At" ColumnName="At" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Employe)">
+        <MappingFragment StoreEntitySet="EmployeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="At" ColumnName="At" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Formation)">
+        <MappingFragment StoreEntitySet="FormationSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="At" ColumnName="At" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ouverte" ColumnName="Ouverte" />
+          <ScalarProperty Name="DateLimite" ColumnName="DateLimite" />
+          <ScalarProperty Name="Desccription" ColumnName="Desccription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeFormationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.EmployeFormation)">
+        <MappingFragment StoreEntitySet="EmployeFormationSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="At" ColumnName="At" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupportSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Support)">
+        <MappingFragment StoreEntitySet="SupportSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContenuSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Contenu)">
+        <MappingFragment StoreEntitySet="ContenuSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Texte" ColumnName="Texte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuizSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Quiz)">
+        <MappingFragment StoreEntitySet="QuizSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Examen" ColumnName="Examen" />
+          <ScalarProperty Name="Valide" ColumnName="Valide" />
+          <ScalarProperty Name="Duree" ColumnName="Duree" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeQuizSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.EmployeQuiz)">
+        <MappingFragment StoreEntitySet="EmployeQuizSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="At" ColumnName="At" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Question)">
+        <MappingFragment StoreEntitySet="QuestionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Contenu" ColumnName="Contenu" />
+          <ScalarProperty Name="At" ColumnName="At" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeQuestionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.TypeQuestion)">
+        <MappingFragment StoreEntitySet="TypeQuestionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="At" ColumnName="At" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OptionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Option)">
+        <MappingFragment StoreEntitySet="OptionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Reponse" ColumnName="Reponse" />
+          <ScalarProperty Name="At" ColumnName="At" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReponseSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Reponse)">
+        <MappingFragment StoreEntitySet="ReponseSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Proposition" ColumnName="Proposition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompositionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ACModel.Composition)">
+        <MappingFragment StoreEntitySet="CompositionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="At" ColumnName="At" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="EntiteEntite" TypeName="ACModel.EntiteEntite" StoreEntitySet="EntiteSet">
+      <EndProperty Name="Entite">
+        <ScalarProperty Name="Id" ColumnName="Parent_Id" />
+      </EndProperty>
+      <EndProperty Name="Entite1">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TypeEntiteEntite" TypeName="ACModel.TypeEntiteEntite" StoreEntitySet="EntiteSet">
+      <EndProperty Name="TypeEntite">
+        <ScalarProperty Name="Id" ColumnName="TypeEntite_Id" />
+      </EndProperty>
+      <EndProperty Name="Entite">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TypeEntiteFonction" TypeName="ACModel.TypeEntiteFonction" StoreEntitySet="FonctionSet">
+      <EndProperty Name="TypeEntite">
+        <ScalarProperty Name="Id" ColumnName="TypeEntite_Id" />
+      </EndProperty>
+      <EndProperty Name="Fonction">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EntitePoste" TypeName="ACModel.EntitePoste" StoreEntitySet="PosteSet">
+      <EndProperty Name="Entite">
+        <ScalarProperty Name="Id" ColumnName="Entite_Id" />
+      </EndProperty>
+      <EndProperty Name="Poste">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FonctionPoste" TypeName="ACModel.FonctionPoste" StoreEntitySet="PosteSet">
+      <EndProperty Name="Fonction">
+        <ScalarProperty Name="Id" ColumnName="Fonction_Id" />
+      </EndProperty>
+      <EndProperty Name="Poste">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployePoste" TypeName="ACModel.EmployePoste" StoreEntitySet="PosteSet">
+      <EndProperty Name="Employe">
+        <ScalarProperty Name="Id" ColumnName="Employe_Id" />
+      </EndProperty>
+      <EndProperty Name="Poste">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PosteEmployeFormation" TypeName="ACModel.PosteEmployeFormation" StoreEntitySet="EmployeFormationSet">
+      <EndProperty Name="Poste">
+        <ScalarProperty Name="Id" ColumnName="Poste_Id" />
+      </EndProperty>
+      <EndProperty Name="EmployeFormation">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FormationEmployeFormation" TypeName="ACModel.FormationEmployeFormation" StoreEntitySet="EmployeFormationSet">
+      <EndProperty Name="Formation">
+        <ScalarProperty Name="Id" ColumnName="Formation_Id" />
+      </EndProperty>
+      <EndProperty Name="EmployeFormation">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SupportContenu" TypeName="ACModel.SupportContenu" StoreEntitySet="ContenuSet">
+      <EndProperty Name="Support">
+        <ScalarProperty Name="Id" ColumnName="Support_Id" />
+      </EndProperty>
+      <EndProperty Name="Contenu">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FormationSupport" TypeName="ACModel.FormationSupport" StoreEntitySet="SupportSet">
+      <EndProperty Name="Formation">
+        <ScalarProperty Name="Id" ColumnName="Formation_Id" />
+      </EndProperty>
+      <EndProperty Name="Support">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FormationQuiz" TypeName="ACModel.FormationQuiz" StoreEntitySet="QuizSet">
+      <EndProperty Name="Formation">
+        <ScalarProperty Name="Id" ColumnName="Formation_Id" />
+      </EndProperty>
+      <EndProperty Name="Quiz">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployeFormationEmployeQuiz" TypeName="ACModel.EmployeFormationEmployeQuiz" StoreEntitySet="EmployeQuizSet">
+      <EndProperty Name="EmployeFormation">
+        <ScalarProperty Name="Id" ColumnName="EmployeFormation_Id" />
+      </EndProperty>
+      <EndProperty Name="EmployeQuiz">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="QuizEmployeQuiz" TypeName="ACModel.QuizEmployeQuiz" StoreEntitySet="EmployeQuizSet">
+      <EndProperty Name="Quiz">
+        <ScalarProperty Name="Id" ColumnName="Quiz_Id" />
+      </EndProperty>
+      <EndProperty Name="EmployeQuiz">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="QuestionTypeQuestion" TypeName="ACModel.QuestionTypeQuestion" StoreEntitySet="QuestionSet">
+      <EndProperty Name="TypeQuestion">
+        <ScalarProperty Name="Id" ColumnName="TypeQuestion_Id" />
+      </EndProperty>
+      <EndProperty Name="Question">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="QuestionOption" TypeName="ACModel.QuestionOption" StoreEntitySet="OptionSet">
+      <EndProperty Name="Question">
+        <ScalarProperty Name="Id" ColumnName="Question_Id" />
+      </EndProperty>
+      <EndProperty Name="Option">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="QuizQuestion" TypeName="ACModel.QuizQuestion" StoreEntitySet="QuestionSet">
+      <EndProperty Name="Quiz">
+        <ScalarProperty Name="Id" ColumnName="Quiz_Id" />
+      </EndProperty>
+      <EndProperty Name="Question">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="QuestionReponse" TypeName="ACModel.QuestionReponse" StoreEntitySet="ReponseSet">
+      <EndProperty Name="Question">
+        <ScalarProperty Name="Id" ColumnName="Question_Id" />
+      </EndProperty>
+      <EndProperty Name="Reponse">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OptionReponse" TypeName="ACModel.OptionReponse" StoreEntitySet="ReponseSet">
+      <EndProperty Name="Option">
+        <ScalarProperty Name="Id" ColumnName="Option_Id" />
+      </EndProperty>
+      <EndProperty Name="Reponse">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployeQuizComposition" TypeName="ACModel.EmployeQuizComposition" StoreEntitySet="CompositionSet">
+      <EndProperty Name="EmployeQuiz">
+        <ScalarProperty Name="Id" ColumnName="EmployeQuiz_Id" />
+      </EndProperty>
+      <EndProperty Name="Composition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CompositionReponse" TypeName="ACModel.CompositionReponse" StoreEntitySet="ReponseSet">
+      <EndProperty Name="Composition">
+        <ScalarProperty Name="Id" ColumnName="Composition_Id" />
+      </EndProperty>
+      <EndProperty Name="Reponse">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

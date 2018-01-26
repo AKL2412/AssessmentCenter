@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3809efca24d149cf93f7de650f69d36e" Name="Diagram1" ZoomLevel="47" >
+        <EntityTypeShape EntityType="ACModel.Entite" Width="1.5" PointX="0.5" PointY="0.5" />
+        <AssociationConnector Association="ACModel.EntiteEntite" />
+        <EntityTypeShape EntityType="ACModel.TypeEntite" Width="1.5" PointX="3" PointY="0.5" />
+        <AssociationConnector Association="ACModel.TypeEntiteEntite" />
+        <EntityTypeShape EntityType="ACModel.Fonction" Width="1.5" PointX="5.875" PointY="0.75" />
+        <AssociationConnector Association="ACModel.TypeEntiteFonction" />
+        <EntityTypeShape EntityType="ACModel.Poste" Width="1.75" PointX="4.5" PointY="4.375" />
+        <AssociationConnector Association="ACModel.EntitePoste" />
+        <AssociationConnector Association="ACModel.FonctionPoste" />
+        <EntityTypeShape EntityType="ACModel.Employe" Width="1.5" PointX="1" PointY="4.125" />
+        <AssociationConnector Association="ACModel.EmployePoste" />
+        <EntityTypeShape EntityType="ACModel.Formation" Width="2.25" PointX="8.875" PointY="6.75" />
+        <EntityTypeShape EntityType="ACModel.EmployeFormation" Width="1.875" PointX="5.25" PointY="7.875" />
+        <AssociationConnector Association="ACModel.PosteEmployeFormation" />
+        <AssociationConnector Association="ACModel.FormationEmployeFormation" />
+        <EntityTypeShape EntityType="ACModel.Support" Width="1.5" PointX="12.5" PointY="5.5" />
+        <EntityTypeShape EntityType="ACModel.Contenu" Width="1.5" PointX="15.375" PointY="5.5" />
+        <AssociationConnector Association="ACModel.SupportContenu" />
+        <AssociationConnector Association="ACModel.FormationSupport" />
+        <EntityTypeShape EntityType="ACModel.Quiz" Width="1.5" PointX="10.375" PointY="11.25" />
+        <AssociationConnector Association="ACModel.FormationQuiz" />
+        <EntityTypeShape EntityType="ACModel.EmployeQuiz" Width="1.5" PointX="7.5" PointY="11.25" />
+        <AssociationConnector Association="ACModel.EmployeFormationEmployeQuiz" />
+        <AssociationConnector Association="ACModel.QuizEmployeQuiz" />
+        <EntityTypeShape EntityType="ACModel.Question" Width="1.5" PointX="14.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ACModel.TypeQuestion" Width="1.5" PointX="14.75" PointY="8.75" />
+        <AssociationConnector Association="ACModel.QuestionTypeQuestion" />
+        <EntityTypeShape EntityType="ACModel.Option" Width="1.5" PointX="14.75" PointY="15.375" />
+        <AssociationConnector Association="ACModel.QuestionOption" />
+        <EntityTypeShape EntityType="ACModel.Reponse" Width="1.5" PointX="12.125" PointY="15.375" />
+        <AssociationConnector Association="ACModel.QuizQuestion" />
+        <AssociationConnector Association="ACModel.QuestionReponse" />
+        <AssociationConnector Association="ACModel.OptionReponse" />
+        <EntityTypeShape EntityType="ACModel.Composition" Width="1.5" PointX="7.625" PointY="15.5" />
+        <AssociationConnector Association="ACModel.EmployeQuizComposition" />
+        <AssociationConnector Association="ACModel.CompositionReponse" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

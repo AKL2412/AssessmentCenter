@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  assessmentcenterweb:
+    image: assessmentcenterweb
+    build:
+      context: .\AssessmentCenterWEB
+      dockerfile: Dockerfile
