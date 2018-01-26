@@ -2,8 +2,41 @@
 @{
     ViewBag.Title = "Index";
 }
-
+@model  List<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
 <h2>
     Gestion des roles
 </h2>
 
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Name)
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                  
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <li>@Html.ActionLink("Ajout un role", "create", "Roles")</li>
+</div>

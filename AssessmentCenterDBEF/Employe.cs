@@ -18,6 +18,8 @@ namespace AssessmentCenterDBEF
         public Employe()
         {
             this.Poste = new HashSet<Poste>();
+            this.At = DateTime.Today;
+            this.Active = true;
         }
     
         public int Id { get; set; }

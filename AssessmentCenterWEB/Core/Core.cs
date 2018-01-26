@@ -30,6 +30,6 @@ namespace AssessmentCenterWEB.Core
             }
             return false;
         }
-        //*/!
+        //*/
     }
 }

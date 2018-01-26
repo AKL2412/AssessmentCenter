@@ -19,6 +19,7 @@ namespace AssessmentCenterDBEF
         {
             this.SousEntites = new HashSet<Entite>();
             this.Postes = new HashSet<Poste>();
+            this.At = DateTime.Today;
         }
     
         public int Id { get; set; }
